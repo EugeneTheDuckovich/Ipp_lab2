@@ -49,8 +49,6 @@ namespace OnlineChessServer.ViewModels
             {
                 var tcpClient = await _tcpListener.AcceptTcpClientAsync();
                 _tcpClients.Add(tcpClient);
-
-                var tokenSource = new CancellationTokenSource();
                 
                 var processClientTask = Task.Run(
                     async () => await ProcessClient(tcpClient));

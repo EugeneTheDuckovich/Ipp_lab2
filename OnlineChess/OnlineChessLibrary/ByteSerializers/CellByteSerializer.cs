@@ -15,6 +15,7 @@ namespace OnlineChessLibrary.ByteSerializers
             {
                 var cellDTO = new CellDTO { X= cell.Coordinates.X,Y=cell.Coordinates.Y,State = cell.State };
                 var buffer = JsonSerializer.SerializeToUtf8Bytes<CellDTO>(cellDTO);
+                var jsonString = Encoding.UTF8.GetString(buffer);
                 return buffer;
             }
             catch 

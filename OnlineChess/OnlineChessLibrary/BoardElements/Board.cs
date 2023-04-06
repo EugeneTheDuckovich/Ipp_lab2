@@ -16,7 +16,7 @@ public class Board : IEnumerable<Cell>
         get => _area[row, column];
     }
 
-    public Board(bool fill = true)
+    public Board(bool fill = false)
     {
         _area = new Cell[8, 8];
 

@@ -30,6 +30,7 @@ public class Board : IEnumerable<Cell>
 
         if (fill)
         {
+            _area[1, 0].State = State.BlackPawn;
             _area[7, 2].State = State.WhiteBishop;
             _area[0, 2].State = State.BlackBishop;
         }

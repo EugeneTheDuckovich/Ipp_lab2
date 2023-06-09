@@ -8,6 +8,7 @@ public enum State
     Empty,
     BlackBishop,
     WhiteBishop,
+    BlackPawn,
 }
 public class Cell : NotifyPropertyChanged
 {

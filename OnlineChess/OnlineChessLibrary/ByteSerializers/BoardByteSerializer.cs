@@ -12,8 +12,8 @@ public static class BoardByteSerializer
     {
         try
         {
-            var boardMemento = board.Select(c => c.State).ToArray();
-            return JsonSerializer.SerializeToUtf8Bytes<State[]>(boardMemento);
+            var states = board.Select(c => c.State).ToArray();
+            return JsonSerializer.SerializeToUtf8Bytes<State[]>(states);
         }
         catch
         {

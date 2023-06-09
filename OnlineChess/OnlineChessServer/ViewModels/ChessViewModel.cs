@@ -68,10 +68,10 @@ namespace OnlineChessServer.ViewModels
 
                 var cellSizeBuffer = new byte[4];
                 await stream.ReadAsync(cellSizeBuffer);
-                var cellBuffer = new byte[BitConverter.ToInt32(cellSizeBuffer,0)];
-                await stream.ReadAsync(cellBuffer);
+                var updatedBoardBuffer = new byte[BitConverter.ToInt32(cellSizeBuffer,0)];
+                await stream.ReadAsync(updatedBoardBuffer);
 
-                var responseBoard = BoardByteSerializer.Deserialize(cellBuffer);
+                var responseBoard = BoardByteSerializer.Deserialize(updatedBoardBuffer);
                 if (responseBoard is null) continue; 
                 
                 _mutex.WaitOne();

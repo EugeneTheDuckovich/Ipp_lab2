@@ -45,7 +45,8 @@ public class Board : IEnumerable<Cell>
 
     public void ActivateCells(Cell cell)
     {
-        if (cell.State == State.Empty) return;
+        if (cell.State == State.Empty) 
+            return;
 
         if (cell.State == State.WhiteBishop || cell.State == State.BlackBishop)
         {
@@ -55,7 +56,8 @@ public class Board : IEnumerable<Cell>
 
     public void Move(Cell startingCell, Cell finishingCell)
     {
-        if (startingCell.State == State.Empty) throw new InvalidOperationException();
+        if (startingCell.State == State.Empty) 
+            throw new InvalidOperationException();
 
 
         finishingCell.State = startingCell.State;

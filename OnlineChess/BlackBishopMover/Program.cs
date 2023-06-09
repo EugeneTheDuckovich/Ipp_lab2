@@ -17,7 +17,7 @@ while (tcpClient.Connected)
         Environment.Exit(0);
     }
 
-    var boardBuffer = new byte[BitConverter.ToInt32(boardSizeBuffer)];
+    var boardBuffer = new byte[boardBytesSize];
     await stream.ReadAsync(boardBuffer);
     var board = BoardByteSerializer.Deserialize(boardBuffer);
     if (board is null) continue;
